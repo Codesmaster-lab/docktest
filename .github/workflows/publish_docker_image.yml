@@ -24,8 +24,8 @@ jobs:
           docker buildx build \
            --no-cache \
            --platform linux/amd64,linux/arm64 \
-           -t yourusername/website-image:latest \
-           -t yourusername/website-image:$GITHUB_SHA \
+           -t sdec2000/website-image:latest \
+           -t sdec2000/website-image:$GITHUB_SHA \
            --push \
             .
 
