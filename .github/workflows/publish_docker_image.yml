@@ -24,8 +24,8 @@ jobs:
           docker buildx create --use
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
-            -t sdec2000/myapp-image:latest \
-            -t sdec2000/myapp-image:$GITHUB_SHA \
+            -t sdec2000/website-image:latest \
+            -t sdec2000/website-image:$GITHUB_SHA \
             --push \
             .
 
