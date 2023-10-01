@@ -24,13 +24,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v1
 
-      - name: Build with Maven
-        run: mvn clean package
+#      - name: Build with Maven
+#        run: mvn clean package
 
-      - name: Build and push Docker image
+#      - name: Build and push Docker image
 #        env:
 #          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
 #          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -42,12 +42,13 @@ jobs:
 #           -t sdec2000/website-image:$GITHUB_SHA \
 #           --push \
 #            .
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: sdec2000/website
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+
+#        uses: mr-smithers-excellent/docker-build-push@v5
+#        with:
+#          image: sdec2000/website
+#          tags: latest
+#          registry: docker.io
+#          dockerfile: Dockerfile
+#          username: ${{ secrets.DOCKER_USERNAME }}
+#          password: ${{ secrets.DOCKER_PASSWORD }}
 
