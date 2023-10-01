@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      postgres_cont:
         image: postgres:latest
         env:
           POSTGRES_USER: postgres
