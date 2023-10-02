@@ -12,7 +12,8 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   app:
-    build: .
+    image: sdec2000/website:latest
+    container_name: website_app
     env_file:
       - .env
     ports:
