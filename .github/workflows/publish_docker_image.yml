@@ -58,7 +58,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: website-artifact
-          path: $HOME/artifacts/
+          path: $HOME/artifacts/website.jar
 
       - name: Set up Docker CLI
         uses: docker/build-push-action@v2
