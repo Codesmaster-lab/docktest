@@ -40,14 +40,14 @@ jobs:
 
       - name: Preserve JAR file
         run: |
-            mkdir -p $HOME/artifacts
-            mv target/website.jar $HOME/artifacts/
+            mkdir -p artifacts
+            mv target/website.jar artifacts/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
             name: website-artifact
-            path: $HOME/artifacts/website.jar
+            path: artifacts/website.jar
 
   publish_docker:
     needs: build
@@ -58,7 +58,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: website-artifact
-          path: $HOME/artifacts/website.jar
+          path: artifacts/
 
       - name: Set up Docker CLI
         uses: docker/build-push-action@v2
