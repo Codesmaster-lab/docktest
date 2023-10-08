@@ -60,6 +60,9 @@ jobs:
           name: website-artifact
           path: artifacts/
 
+      - name: List files in the context directory
+        run: ls -R
+
       - name: Set up Docker CLI
         uses: docker/build-push-action@v2
         with:
