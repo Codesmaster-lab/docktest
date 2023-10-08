@@ -41,13 +41,13 @@ jobs:
       - name: Preserve JAR file
         run: |
             mkdir -p artifacts
-            mv target/website.jar artifact/
+            mv target/website.jar artifacts/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
             name: website-artifact
-            path: artifact/website.jar
+            path: artifacts/website.jar
 
   publish_docker:
     needs: build
@@ -60,7 +60,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: website-artifact
-          path: artifact/
+          path: artifacts/
 
       - name: List files in the context directory
         run: ls -R
