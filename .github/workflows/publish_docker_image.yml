@@ -68,11 +68,11 @@ jobs:
       - name: Set up Docker CLI
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-            context: .
+            image: sdec2000/website
+            tags: latest
+            registry: docker.io
             dockerfile: Dockerfile
-            push: true
-            tags: sdec2000/website:latest
-        env:
-            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+
 
